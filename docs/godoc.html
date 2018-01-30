@@ -1,0 +1,465 @@
+use 'godoc cmd/order/app' for documentation on the order/app command 
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type='text/javascript'>
+	document.ANALYSIS_DATA = ;
+	document.CALLGRAPH = ;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "order/app"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>
+Package app specifies the models (struct) and the business logic for the application (Order microservice).
+Abstracts the complexity from executables (inside /cmd) and keeps them as clean as possible.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="#CreateOrder">func CreateOrder(c *gin.Context)</a></dd>
+			
+				
+				<dd><a href="#FetchOrder">func FetchOrder(c *gin.Context)</a></dd>
+			
+				
+				<dd><a href="#InitDB">func InitDB()</a></dd>
+			
+				
+				<dd><a href="#Ping">func Ping(c *gin.Context)</a></dd>
+			
+				
+				<dd><a href="#UpdateOrder">func UpdateOrder(c *gin.Context)</a></dd>
+			
+			
+				
+				<dd><a href="#Configuration">type Configuration</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Customer">type Customer</a></dd>
+				
+				
+			
+				
+				<dd><a href="#NewOrderReq">type NewOrderReq</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Order">type Order</a></dd>
+				
+				
+			
+				
+				<dd><a href="#OrderProduct">type OrderProduct</a></dd>
+				
+				
+			
+				
+				<dd><a href="#OrderResponse">type OrderResponse</a></dd>
+				
+				
+			
+				
+				<dd><a href="#Product">type Product</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h4>Package files</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/order/app/app.go">app.go</a>
+			
+				<a href="/src/order/app/dbinit.go">dbinit.go</a>
+			
+				<a href="/src/order/app/validator.go">validator.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+			
+			
+			<h2 id="CreateOrder">func <a href="/src/target/app.go?s=1342:1374#L34">CreateOrder</a>
+				<a class="permalink" href="#CreateOrder">&#xb6;</a>
+			</h2>
+			<pre>func CreateOrder(c *<a href="/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="/pkg/github.com/gin-gonic/gin/#Context">Context</a>)</pre>
+			<p>
+CreateOrder accepts the create order request and stores order details in the DB.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="FetchOrder">func <a href="/src/target/app.go?s=3439:3470#L92">FetchOrder</a>
+				<a class="permalink" href="#FetchOrder">&#xb6;</a>
+			</h2>
+			<pre>func FetchOrder(c *<a href="/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="/pkg/github.com/gin-gonic/gin/#Context">Context</a>)</pre>
+			<p>
+FetchOrder retrieves the order details from DB based on the &#39;order_id&#39; passed in path param.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="InitDB">func <a href="/src/target/dbinit.go?s=2223:2236#L59">InitDB</a>
+				<a class="permalink" href="#InitDB">&#xb6;</a>
+			</h2>
+			<pre>func InitDB()</pre>
+			<p>
+InitDB establishes a connection to the required DB (based on SQL connection string).
+Initializes the DB with default tables required for running Order Microservice.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Ping">func <a href="/src/target/app.go?s=1229:1254#L31">Ping</a>
+				<a class="permalink" href="#Ping">&#xb6;</a>
+			</h2>
+			<pre>func Ping(c *<a href="/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="/pkg/github.com/gin-gonic/gin/#Context">Context</a>)</pre>
+			<p>
+Ping is used to check the health of the ORDER service.
+If service is up and running, it returns a status of &#39;200 OK&#39;
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdateOrder">func <a href="/src/target/app.go?s=4973:5005#L134">UpdateOrder</a>
+				<a class="permalink" href="#UpdateOrder">&#xb6;</a>
+			</h2>
+			<pre>func UpdateOrder(c *<a href="/pkg/github.com/gin-gonic/gin/">gin</a>.<a href="/pkg/github.com/gin-gonic/gin/#Context">Context</a>)</pre>
+			<p>
+UpdateOrder retrieves an order details from DB based on the &#39;order_id&#39; passed in path param.
+After fetching order details, it updates the old details with new details for the same order record.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Configuration">type <a href="/src/target/dbinit.go?s=205:378#L4">Configuration</a>
+				<a class="permalink" href="#Configuration">&#xb6;</a>
+			</h2>
+			<p>
+Configuration type corresponds to the DB Configs JSON from the &#39;dbconf.json&#39; file
+</p>
+
+			<pre>type Configuration struct {
+<span id="Configuration.Host"></span>    Host     <a href="/pkg/builtin/#string">string</a> `json:&#34;host&#34;`
+<span id="Configuration.Port"></span>    Port     <a href="/pkg/builtin/#int">int</a>    `json:&#34;port&#34;`
+<span id="Configuration.User"></span>    User     <a href="/pkg/builtin/#string">string</a> `json:&#34;user&#34;`
+<span id="Configuration.Password"></span>    Password <a href="/pkg/builtin/#string">string</a> `json:&#34;password&#34;`
+<span id="Configuration.Dbname"></span>    Dbname   <a href="/pkg/builtin/#string">string</a> `json:&#34;dbname&#34;`
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Customer">type <a href="/src/target/dbinit.go?s=1384:1612#L36">Customer</a>
+				<a class="permalink" href="#Customer">&#xb6;</a>
+			</h2>
+			<p>
+Customer type corresponds to the &#39;customers&#39; table in the DB and defines its schema
+</p>
+
+			<pre>type Customer struct {
+<span id="Customer.Id"></span>    Id           <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;customer_id&#34;`
+<span id="Customer.CustomerName"></span>    CustomerName <a href="/pkg/builtin/#string">string</a> `db:&#34;customer_name&#34;`
+<span id="Customer.Address"></span>    Address      <a href="/pkg/builtin/#string">string</a> `db:&#34;address&#34;`
+<span id="Customer.Phone"></span>    Phone        <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;phone&#34;`
+<span id="Customer.CreatedAt"></span>    CreatedAt    <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;created_at&#34;`
+<span id="Customer.UpdatedAt"></span>    UpdatedAt    <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;updated_at&#34;`
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="NewOrderReq">type <a href="/src/target/app.go?s=642:751#L13">NewOrderReq</a>
+				<a class="permalink" href="#NewOrderReq">&#xb6;</a>
+			</h2>
+			<p>
+NewOrderReq type corresponds to the incoming POST request data for Add Order API.
+</p>
+
+			<pre>type NewOrderReq struct {
+<span id="NewOrderReq.CustomerName"></span>    CustomerName <a href="/pkg/builtin/#string">string</a>    `json:&#34;customer_name&#34;`
+<span id="NewOrderReq.Products"></span>    Products     []<a href="#Product">Product</a> `json:&#34;products&#34;`
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Order">type <a href="/src/target/dbinit.go?s=460:734#L13">Order</a>
+				<a class="permalink" href="#Order">&#xb6;</a>
+			</h2>
+			<p>
+Order type corresponds to the &#39;orders&#39; table in the DB and defines its schema
+</p>
+
+			<pre>type Order struct {
+    <span class="comment">// db tag lets you specify the column name if it differs from the struct field</span>
+<span id="Order.Id"></span>    Id           <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;order_id&#34;`
+<span id="Order.CustomerName"></span>    CustomerName <a href="/pkg/builtin/#string">string</a> `db:&#34;customer_name&#34;`
+<span id="Order.Status"></span>    Status       <a href="/pkg/builtin/#string">string</a> `db:&#34;status&#34;`
+<span id="Order.CreatedAt"></span>    CreatedAt    <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;created_at&#34;`
+<span id="Order.UpdatedAt"></span>    UpdatedAt    <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;updated_at&#34;`
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="OrderProduct">type <a href="/src/target/dbinit.go?s=932:1296#L24">OrderProduct</a>
+				<a class="permalink" href="#OrderProduct">&#xb6;</a>
+			</h2>
+			<p>
+OrderProduct type corresponds to the &#39;order_products&#39; table in the DB and defines its schema.
+Can&#39;t specify foreign key constraints as currently, there is no support for foreign keys in gorp.
+</p>
+
+			<pre>type OrderProduct struct {
+    <span class="comment">// db tag lets you specify the column name if it differs from the struct field</span>
+<span id="OrderProduct.Id"></span>    Id           <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;order_product_id&#34;`
+<span id="OrderProduct.OrderId"></span>    OrderId      <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;order_id&#34;`
+<span id="OrderProduct.ProductId"></span>    ProductId    <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;product_id&#34;`
+<span id="OrderProduct.ProductEan"></span>    ProductEan   <a href="/pkg/builtin/#string">string</a> `db:&#34;product_ean&#34;`
+<span id="OrderProduct.CustomerName"></span>    CustomerName <a href="/pkg/builtin/#string">string</a> `db:&#34;customer_name&#34;`
+<span id="OrderProduct.CreatedAt"></span>    CreatedAt    <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;created_at&#34;`
+<span id="OrderProduct.UpdatedAt"></span>    UpdatedAt    <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;updated_at&#34;`
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="OrderResponse">type <a href="/src/target/app.go?s=862:1045#L19">OrderResponse</a>
+				<a class="permalink" href="#OrderResponse">&#xb6;</a>
+			</h2>
+			<p>
+OrderResponse type corresponds to the outgoing response for the GET request for fetching an order details.
+</p>
+
+			<pre>type OrderResponse struct {
+<span id="OrderResponse.OrderId"></span>    OrderId      <a href="/pkg/builtin/#int64">int64</a>  `json:&#34;order_id&#34;`
+<span id="OrderResponse.ProductId"></span>    ProductId    <a href="/pkg/builtin/#int64">int64</a>  `json:&#34;product_id&#34;`
+<span id="OrderResponse.ProductEan"></span>    ProductEan   <a href="/pkg/builtin/#string">string</a> `json:&#34;product_ean&#34;`
+<span id="OrderResponse.CustomerName"></span>    CustomerName <a href="/pkg/builtin/#string">string</a> `json:&#34;customer_name&#34;`
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Product">type <a href="/src/target/dbinit.go?s=1698:2052#L46">Product</a>
+				<a class="permalink" href="#Product">&#xb6;</a>
+			</h2>
+			<p>
+Product type corresponds to the &#39;products&#39; table in the DB and defines its schema
+</p>
+
+			<pre>type Product struct {
+<span id="Product.Id"></span>    Id          <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;product_id&#34; json:&#34;product_id&#34;`
+<span id="Product.ProductName"></span>    ProductName <a href="/pkg/builtin/#string">string</a> `db:&#34;product_name&#34;`
+<span id="Product.EanBarcode"></span>    EanBarcode  <a href="/pkg/builtin/#string">string</a> `db:&#34;product_ean&#34; json:&#34;product_ean&#34;`
+<span id="Product.Category"></span>    Category    <a href="/pkg/builtin/#string">string</a> `db:&#34;category&#34;`
+<span id="Product.SubCategory"></span>    SubCategory <a href="/pkg/builtin/#string">string</a> `db:&#34;sub_category&#34;`
+<span id="Product.Description"></span>    Description <a href="/pkg/builtin/#string">string</a> `db:&#34;description&#34;`
+<span id="Product.CreatedAt"></span>    CreatedAt   <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;created_at&#34;`
+<span id="Product.UpdatedAt"></span>    UpdatedAt   <a href="/pkg/builtin/#int64">int64</a>  `db:&#34;updated_at&#34;`
+}</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+

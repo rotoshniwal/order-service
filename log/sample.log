@@ -1,0 +1,15 @@
+Logger is setup for the microservice
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] HEAD   /v1/order/                --> order/app.Ping (3 handlers)
+[GIN-debug] POST   /v1/order/                --> order/app.CreateOrder (3 handlers)
+[GIN-debug] GET    /v1/order/:id             --> order/app.FetchOrder (3 handlers)
+[GIN-debug] PUT    /v1/order/:id             --> order/app.UpdateOrder (3 handlers)
+[GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2018/01/30 - 19:24:15 | 200 |    2.692865ms |             ::1 | GET      /v1/order/10
+[GIN] 2018/01/30 - 19:24:26 | 200 |     736.556µs |             ::1 | GET      /v1/order/6
